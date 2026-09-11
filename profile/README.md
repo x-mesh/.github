@@ -23,7 +23,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/layers.dark.svg">
     <img src="./assets/layers.svg" width="900"
-         alt="Five layers. Environment: term-mesh, where agents run. Harness: xm, what gets built and whether it ships. Context: mem-mesh, opt-in, what survives the session. Version control: gk, staying recoverable. Operations: aic, edc and httprove, what broke after it shipped, each used on its own.">
+         alt="Five layers. Environment: term-mesh, where agents run. Harness: xm, what gets built and whether it ships. Context: mem-mesh, opt-in, what survives the session. Version control: gk, staying recoverable. Operations: aic, edc, httprove and dbops, what broke after it shipped, each used on its own.">
   </picture>
 </p>
 
@@ -35,7 +35,7 @@
 | **Harness** | [xm](https://github.com/x-mesh/xm) | What gets built, and whether it ships. Plans grounded in repository evidence, the smallest sufficient change, a cross-vendor panel that gates the result. |
 | **Context** | [mem-mesh](https://github.com/x-mesh/mem-mesh) | What survives the session. Decisions that never reach git, resumable work state, injection that is measured rather than assumed. It attaches at the agent, not at the app, so any environment that runs an agent picks it up. Opt-in everywhere, required nowhere. |
 | **Version control** | [gk](https://github.com/x-mesh/gk) | Staying recoverable. Reflog-backed undo, time-machine restore, policies as code. |
-| **Operations** | [aic](https://github.com/x-mesh/aic) · [edc](https://github.com/x-mesh/edc) · [httprove](https://github.com/x-mesh/httprove) | What broke after it shipped. Every command read-only: find the fault and stop. Safe on a production host. These do not call each other; each is picked up on its own. |
+| **Operations** | [aic](https://github.com/x-mesh/aic) · [edc](https://github.com/x-mesh/edc) · [httprove](https://github.com/x-mesh/httprove) · [dbops](https://github.com/x-mesh/dbops) | What broke after it shipped. Diagnosis is read-only and stops at the fault; anything that writes makes you type the target's name first. These do not call each other; each is picked up on its own. |
 
 Each layer stands alone. `mem-mesh` is an MCP server any client can call. `edc` and
 `httprove` are plain CLIs. `xm` is explicitly built to keep working with no term-mesh
