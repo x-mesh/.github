@@ -19,36 +19,19 @@
 
 ## The layers
 
-```mermaid
-graph TB
-  subgraph ENV["Environment"]
-    TM["term-mesh<br/>parallel agents · isolated worktrees · local or SSH"]
-  end
-  subgraph HARNESS["Harness"]
-    XM["xm<br/>plan · gate · cross-vendor review"]
-  end
-  subgraph OPS["Operations"]
-    AIC["aic<br/>shell + SRE agent"]
-    EDC["edc"]
-    HP["httprove"]
-  end
-  GK["gk — version control<br/>policies as code · reflog-backed undo"]
-  MM["mem-mesh — context<br/>attaches at the agent · opt-in, never required"]
-  TM <-->|"telemetry contract"| XM
-  GK -->|"finish --gate"| XM
-  TM -.->|"optional · agent config"| MM
-  XM -->|"handoff mirror · pin reconcile"| MM
-  AIC -.->|"optional · MCP client"| MM
-  AIC -.->|"planned"| EDC
-  AIC -.->|"planned"| HP
-```
+<p align="center">
+  <img src="./assets/layers.svg" width="900"
+       alt="Five layers. Environment: term-mesh, where agents run. Harness: xm, what gets built and whether it ships. Context: mem-mesh, opt-in, what survives the session. Version control: gk, staying recoverable. Operations: aic, edc and httprove, what broke after it shipped.">
+</p>
+
+<sub>Rendered by <a href="https://github.com/x-mesh/card">card</a> from <a href="./card.json">card.json</a>. The repository count in it is measured, not written down.</sub>
 
 | Layer | | What it owns |
 |---|---|---|
 | **Environment** | [term-mesh](https://github.com/x-mesh/term-mesh) | Where agents run. A team of them in parallel, each in its own sandboxed worktree, on this Mac or over SSH. |
 | **Harness** | [xm](https://github.com/x-mesh/xm) | What gets built, and whether it ships. Plans grounded in repository evidence, the smallest sufficient change, a cross-vendor panel that gates the result. |
 | **Context** | [mem-mesh](https://github.com/x-mesh/mem-mesh) | What survives the session. Decisions that never reach git, resumable work state, injection that is measured rather than assumed. It attaches at the agent, not at the app, so any environment that runs an agent picks it up. Opt-in everywhere, required nowhere. |
-| **Version control** | [gk](https://github.com/x-mesh/gk) | Staying recoverable. Reflog-backed undo, time-machine restore, policies as code. Runs under 8 of the 10 repositories here. |
+| **Version control** | [gk](https://github.com/x-mesh/gk) | Staying recoverable. Reflog-backed undo, time-machine restore, policies as code. |
 | **Operations** | [aic](https://github.com/x-mesh/aic) · [edc](https://github.com/x-mesh/edc) · [httprove](https://github.com/x-mesh/httprove) | What broke after it shipped. Every command read-only: find the fault and stop. Safe on a production host. |
 
 Each layer stands alone. `mem-mesh` is an MCP server any client can call. `edc` and
