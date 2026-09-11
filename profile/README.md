@@ -20,8 +20,11 @@
 ## The layers
 
 <p align="center">
-  <img src="./assets/layers.svg" width="900"
-       alt="Five layers. Environment: term-mesh, where agents run. Harness: xm, what gets built and whether it ships. Context: mem-mesh, opt-in, what survives the session. Version control: gk, staying recoverable. Operations: aic, edc and httprove, what broke after it shipped.">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/layers.dark.svg">
+    <img src="./assets/layers.svg" width="900"
+         alt="Five layers. Environment: term-mesh, where agents run. Harness: xm, what gets built and whether it ships. Context: mem-mesh, opt-in, what survives the session. Version control: gk, staying recoverable. Operations: aic, edc and httprove, what broke after it shipped.">
+  </picture>
 </p>
 
 <sub>Rendered by <a href="https://github.com/x-mesh/card">card</a> from <a href="./card.json">card.json</a>. The repository count in it is measured, not written down.</sub>

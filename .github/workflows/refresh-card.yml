@@ -30,17 +30,19 @@ jobs:
       - name: Render
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx --yes github:x-mesh/card render --config profile/card.json --template terminal --out profile/assets/layers.svg
+        run: |
+          npx --yes github:x-mesh/card render --config profile/card.json --template terminal --out profile/assets/layers.svg
+          npx --yes github:x-mesh/card render --config profile/card.json --template terminal --dark --out profile/assets/layers.dark.svg
 
       - name: Commit if changed
         run: |
-          if git diff --quiet -- profile/assets/layers.svg; then
+          if git diff --quiet -- profile/assets; then
             echo "no change"
             exit 0
           fi
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add profile/assets/layers.svg
+          git add profile/assets
           git commit -m "chore: refresh layers card"
           git push
 
