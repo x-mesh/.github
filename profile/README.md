@@ -33,12 +33,12 @@ graph TB
     HP["httprove"]
   end
   GK["gk — version control<br/>policies as code · reflog-backed undo"]
-  MM["mem-mesh — context<br/>attaches at the agent, so every layer above inherits it"]
+  MM["mem-mesh — context<br/>attaches at the agent · opt-in, never required"]
   TM <-->|"telemetry contract"| XM
   GK -->|"finish --gate"| XM
-  TM -.->|"shared agent runtime"| MM
+  TM -.->|"optional · agent config"| MM
   XM -->|"handoff mirror · pin reconcile"| MM
-  AIC -->|"MCP client"| MM
+  AIC -.->|"optional · MCP client"| MM
   AIC -.->|"planned"| EDC
   AIC -.->|"planned"| HP
 ```
@@ -47,7 +47,7 @@ graph TB
 |---|---|---|
 | **Environment** | [term-mesh](https://github.com/x-mesh/term-mesh) | Where agents run. A team of them in parallel, each in its own sandboxed worktree, on this Mac or over SSH. |
 | **Harness** | [xm](https://github.com/x-mesh/xm) | What gets built, and whether it ships. Plans grounded in repository evidence, the smallest sufficient change, a cross-vendor panel that gates the result. |
-| **Context** | [mem-mesh](https://github.com/x-mesh/mem-mesh) | What survives the session. Decisions that never reach git, resumable work state, injection that is measured rather than assumed. It attaches at the agent, not at the app, so every layer that runs an agent inherits it. |
+| **Context** | [mem-mesh](https://github.com/x-mesh/mem-mesh) | What survives the session. Decisions that never reach git, resumable work state, injection that is measured rather than assumed. It attaches at the agent, not at the app, so any environment that runs an agent picks it up. Opt-in everywhere, required nowhere. |
 | **Version control** | [gk](https://github.com/x-mesh/gk) | Staying recoverable. Reflog-backed undo, time-machine restore, policies as code. Runs under 8 of the 10 repositories here. |
 | **Operations** | [aic](https://github.com/x-mesh/aic) · [edc](https://github.com/x-mesh/edc) · [httprove](https://github.com/x-mesh/httprove) | What broke after it shipped. Every command read-only: find the fault and stop. Safe on a production host. |
 
@@ -57,10 +57,11 @@ in sight.
 
 They connect two different ways. Some edges are contracts in code — `xm` and
 `term-mesh` each hold the other's integration spec, `gk` hands a finished worktree to
-`xm`'s gate. Others are shared runtime: `mem-mesh` lives in the agent's own
-configuration, so it follows the agent into whichever environment launched it.
-Context is handled at both ends — `term-mesh` watches how full the live window is,
-`mem-mesh` keeps what matters when that window resets.
+`xm`'s gate. Others are opt-in: `mem-mesh` lives in the agent's own configuration, so
+it follows the agent into whichever environment launched it. Nothing here requires it.
+Run `term-mesh` without it and the agents still work — they just start every session
+from nothing. Add it and context is covered at both ends: `term-mesh` watches how full
+the live window is, `mem-mesh` keeps what matters when that window resets.
 
 ## Why it is built this way
 
