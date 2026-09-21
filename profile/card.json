@@ -40,14 +40,15 @@
       "color": "green",
       "hex": "#1a7f37",
       "repos": [
-        "mem-mesh"
+        "mem-mesh",
+        "output-mesh"
       ],
       "tag": "(opt-in)",
       "owns": "what survives the session",
       "wired": "follows the agent, not the app",
       "wiredColor": "green",
       "lead": "What survives the session.",
-      "body": "It attaches at the agent, not at the app, so any environment above picks it up. Nothing here requires it.",
+      "body": "mem-mesh keeps the decisions and work state; output-mesh catalogs what the agents actually wrote. Both attach at the agent, read-only. Nothing here requires them.",
       "rail": true
     },
     {
@@ -143,7 +144,7 @@
           1
         ],
         "tag": "CONTEXT",
-        "sub": "what survives the session",
+        "sub": "mem-mesh · output-mesh",
         "style": "optional"
       },
       {
