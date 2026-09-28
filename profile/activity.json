@@ -1,0 +1,70 @@
+{
+  "org": "x-mesh",
+  "measuredAt": "2026-09-28T07:12:24.917Z",
+  "repositories": {
+    "total": 22,
+    "private": 5
+  },
+  "months": [
+    {
+      "month": "2025-10",
+      "commits": 0,
+      "mergedPulls": 0
+    },
+    {
+      "month": "2025-11",
+      "commits": 0,
+      "mergedPulls": 0
+    },
+    {
+      "month": "2025-12",
+      "commits": 0,
+      "mergedPulls": 0
+    },
+    {
+      "month": "2026-01",
+      "commits": 223,
+      "mergedPulls": 0
+    },
+    {
+      "month": "2026-02",
+      "commits": 637,
+      "mergedPulls": 0
+    },
+    {
+      "month": "2026-03",
+      "commits": 836,
+      "mergedPulls": 0
+    },
+    {
+      "month": "2026-04",
+      "commits": 1047,
+      "mergedPulls": 9
+    },
+    {
+      "month": "2026-05",
+      "commits": 666,
+      "mergedPulls": 60
+    },
+    {
+      "month": "2026-06",
+      "commits": 890,
+      "mergedPulls": 17
+    },
+    {
+      "month": "2026-07",
+      "commits": 1677,
+      "mergedPulls": 68
+    },
+    {
+      "month": "2026-08",
+      "commits": 1294,
+      "mergedPulls": 280
+    },
+    {
+      "month": "2026-09",
+      "commits": 1278,
+      "mergedPulls": 255
+    }
+  ]
+}
