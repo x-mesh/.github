@@ -12,6 +12,14 @@
 </p>
 
 <p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/activity.dark.svg">
+    <img src="./assets/activity.svg" width="820"
+         alt="Commits on default branches and merged pull requests per month, across every x-mesh repository including private ones. Counts are in activity.json.">
+  </picture>
+</p>
+
+<p align="center">
   Tools built from one habit carried over from running production systems:
   limit the blast radius first, then judge on evidence instead of assumption.
 </p>
