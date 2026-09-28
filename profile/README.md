@@ -5,6 +5,13 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/search?q=org%3Ax-mesh%20is%3Apublic%20is%3Aissue%20is%3Aopen&type=issues"><img alt="open issues" src="https://img.shields.io/github/issues-search?query=org%3Ax-mesh%20is%3Apublic%20is%3Aissue%20is%3Aopen&label=open%20issues&color=blue&style=flat-square"></a>
+  <a href="https://github.com/search?q=org%3Ax-mesh%20is%3Apublic%20is%3Aissue%20is%3Aclosed&type=issues"><img alt="closed issues" src="https://img.shields.io/github/issues-search?query=org%3Ax-mesh%20is%3Apublic%20is%3Aissue%20is%3Aclosed&label=closed%20issues&color=lightgrey&style=flat-square"></a>
+  <a href="https://github.com/search?q=org%3Ax-mesh%20is%3Apublic%20is%3Apr%20is%3Aopen&type=pullrequests"><img alt="open PRs" src="https://img.shields.io/github/issues-search?query=org%3Ax-mesh%20is%3Apublic%20is%3Apr%20is%3Aopen&label=open%20PRs&color=blue&style=flat-square"></a>
+  <a href="https://github.com/search?q=org%3Ax-mesh%20is%3Apublic%20is%3Apr%20is%3Amerged&type=pullrequests"><img alt="merged PRs" src="https://img.shields.io/github/issues-search?query=org%3Ax-mesh%20is%3Apublic%20is%3Apr%20is%3Amerged&label=merged%20PRs&color=purple&style=flat-square"></a>
+</p>
+
+<p align="center">
   Tools built from one habit carried over from running production systems:
   limit the blast radius first, then judge on evidence instead of assumption.
 </p>
