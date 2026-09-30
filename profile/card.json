@@ -1,10 +1,10 @@
 {
   "org": "x-mesh",
-  "title": "x-mesh — layers",
+  "title": "x-mesh: tools",
   "command": "xm layers",
   "footer": {
-    "lead": "each layer stands alone.",
-    "dim": "take one, or wire them together."
+    "lead": "use each tool on its own.",
+    "dim": "integrate them when needed."
   },
   "exclude": [
     "x-kit",
@@ -18,10 +18,10 @@
       "repos": [
         "term-mesh"
       ],
-      "owns": "where agents run",
+      "owns": "run agents locally or over SSH",
       "wired": "term-mesh ⇄ xm   contract in code",
-      "lead": "Where agents run.",
-      "body": "A team of them in parallel, each in its own sandboxed worktree, local or over SSH."
+      "lead": "Runs agents.",
+      "body": "Runs multiple agents in isolated worktrees, locally or over SSH."
     },
     {
       "id": "harness",
@@ -30,10 +30,10 @@
       "repos": [
         "xm"
       ],
-      "owns": "what gets built, and whether it ships",
+      "owns": "plan and review repository changes",
       "wired": "gk → xm          finish --gate",
-      "lead": "What gets built, and whether it ships.",
-      "body": "Repository-grounded plans, the smallest sufficient change, a cross-vendor panel that gates the result."
+      "lead": "Plans and reviews changes.",
+      "body": "Builds repository-grounded plans, keeps changes small, and uses multiple models to review the result."
     },
     {
       "id": "context",
@@ -44,11 +44,11 @@
         "output-mesh"
       ],
       "tag": "(opt-in)",
-      "owns": "what survives the session",
-      "wired": "follows the agent, not the app",
+      "owns": "store work state and agent outputs",
+      "wired": "configured per agent",
       "wiredColor": "green",
-      "lead": "What survives the session.",
-      "body": "mem-mesh keeps the decisions and work state; output-mesh catalogs what the agents actually wrote. Both attach at the agent, read-only. Nothing here requires them.",
+      "lead": "Stores context and outputs.",
+      "body": "mem-mesh stores decisions and resumable work state. output-mesh records agent artifacts and their source sessions. Both are optional and read-only.",
       "rail": true
     },
     {
@@ -58,14 +58,14 @@
       "repos": [
         "gk"
       ],
-      "owns": "staying recoverable",
+      "owns": "make Git operations reversible",
       "measure": {
         "kind": "fileInRepos",
         "path": ".gk.yaml",
         "template": "runs under {hit} of the {total} repos here"
       },
-      "lead": "Staying recoverable.",
-      "body": "Reflog-backed undo, time-machine restore, policies as code.",
+      "lead": "Makes Git operations reversible.",
+      "body": "Provides reflog-based undo, snapshot restore, and repository policies.",
       "rail": true
     },
     {
@@ -79,10 +79,10 @@
         "dbops",
         "x-backup"
       ],
-      "owns": "what broke after it shipped",
+      "owns": "diagnose production problems",
       "wired": "standalone · none calls another",
-      "lead": "What broke after it shipped.",
-      "body": "Diagnosis is read-only and stops at the fault. Anything that writes needs an explicit flag, and offers a dry run first."
+      "lead": "Diagnoses production problems.",
+      "body": "Checks shell, system, network, HTTP, database, and backup problems. Diagnostic actions are read-only by default."
     }
   ],
   "diagram": {
