@@ -1,7 +1,7 @@
 <h1 align="center">x-mesh</h1>
 
 <p align="center">
-  <strong>Find out what's actually wrong, without making it worse.</strong>
+  <strong>Practical tools for building, running, and debugging AI agents.</strong>
 </p>
 
 <p align="center">
@@ -20,14 +20,13 @@
 </p>
 
 <p align="center">
-  Tools built from one habit carried over from running production systems:
-  limit the blast radius first, then judge on evidence instead of assumption.
+  x-mesh is a collection of independent tools for agent development and production
+  operations. Each tool works on its own, and integrations are explicit and optional.
 </p>
 
 <p align="center">
-  Most agent tooling ships the environment, the harness, and the memory as one
-  product. These are the same layers, kept separate &mdash; each usable on its own,
-  wired to the others by contract rather than by bundling.
+  The projects follow the same operating rules: inspect before changing anything,
+  keep changes reversible, and report measurements instead of guesses.
 </p>
 
 ---
@@ -38,55 +37,47 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/layers.dark.svg">
     <img src="./assets/layers.svg" width="900"
-         alt="Five layers. Environment: term-mesh, where agents run. Harness: xm, what gets built and whether it ships. Context: mem-mesh and output-mesh, opt-in, what survives the session. Version control: gk, staying recoverable. Operations: aic, edc, httprove, dbops and x-backup, what broke after it shipped, each used on its own.">
+         alt="Five independent tool groups: agent environments, development workflow, session context, version control, and production diagnostics.">
   </picture>
 </p>
 
-<sub>Rendered by <a href="https://github.com/x-mesh/card">card</a> from <a href="./card.json">card.json</a>. The repository count in it is measured, not written down.</sub>
+<sub>Rendered by <a href="https://github.com/x-mesh/card">card</a> from <a href="./card.json">card.json</a>. The repository count is generated rather than hard-coded.</sub>
 
-| Layer | | What it owns |
+| Layer | | Purpose |
 |---|---|---|
-| **Environment** | [term-mesh](https://github.com/x-mesh/term-mesh) | Where agents run. A team of them in parallel, each in its own sandboxed worktree, on this Mac or over SSH. |
-| **Harness** | [xm](https://github.com/x-mesh/xm) | What gets built, and whether it ships. Plans grounded in repository evidence, the smallest sufficient change, a cross-vendor panel that gates the result. |
-| **Context** | [mem-mesh](https://github.com/x-mesh/mem-mesh) · [output-mesh](https://github.com/x-mesh/output-mesh) | What survives the session. `mem-mesh` keeps the decisions that never reach git, resumable work state, and injection that is measured rather than assumed. `output-mesh` catalogs what the agents actually wrote — every artifact traced back to the session that produced it. Both read-only, both attach at the agent so any environment that runs one picks them up. Opt-in everywhere, required nowhere. |
-| **Version control** | [gk](https://github.com/x-mesh/gk) | Staying recoverable. Reflog-backed undo, time-machine restore, policies as code. |
-| **Operations** | [aic](https://github.com/x-mesh/aic) · [edc](https://github.com/x-mesh/edc) · [httprove](https://github.com/x-mesh/httprove) · [dbops](https://github.com/x-mesh/dbops) · [x-backup](https://github.com/x-mesh/x-backup) | What broke after it shipped. Diagnosis is read-only and stops at the fault; anything that writes needs an explicit flag and offers a dry run first. These do not call each other; each is picked up on its own. |
+| **Environment** | [term-mesh](https://github.com/x-mesh/term-mesh) | Runs multiple agents in isolated worktrees, locally or over SSH. |
+| **Harness** | [xm](https://github.com/x-mesh/xm) | Plans small repository changes from code evidence and reviews the result with multiple models before merge. |
+| **Context** | [mem-mesh](https://github.com/x-mesh/mem-mesh) · [output-mesh](https://github.com/x-mesh/output-mesh) | `mem-mesh` stores decisions and resumable work state. `output-mesh` records agent artifacts and the sessions that produced them. Both are optional, read-only integrations configured per agent. |
+| **Version control** | [gk](https://github.com/x-mesh/gk) | Adds reflog-based undo, snapshot restore, and repository policies. |
+| **Operations** | [aic](https://github.com/x-mesh/aic) · [edc](https://github.com/x-mesh/edc) · [httprove](https://github.com/x-mesh/httprove) · [dbops](https://github.com/x-mesh/dbops) · [x-backup](https://github.com/x-mesh/x-backup) | Diagnoses shell, system, network, HTTP, database, and backup problems. Diagnostic actions are read-only by default. Commands that write require an explicit flag and offer a dry run. |
 
-Each layer stands alone. `mem-mesh` is an MCP server any client can call. `edc` and
-`httprove` are plain CLIs. `xm` is explicitly built to keep working with no term-mesh
-in sight.
+The tools do not depend on one another. `mem-mesh` is an MCP server, `edc` and
+`httprove` are standalone CLIs, and `xm` works without `term-mesh`.
 
-They connect two different ways. Some edges are contracts in code — `xm` and
-`term-mesh` each hold the other's integration spec, `gk` hands a finished worktree to
-`xm`'s gate. Others are opt-in: `mem-mesh` lives in the agent's own configuration, so
-it follows the agent into whichever environment launched it. Nothing here requires it.
-Run `term-mesh` without it and the agents still work — they just start every session
-from nothing. Add it and context is covered at both ends: `term-mesh` watches how full
-the live window is, `mem-mesh` keeps what matters when that window resets.
+Integrations use explicit contracts. `xm` and `term-mesh` share integration specs, and
+`gk finish --gate` sends a completed worktree to `xm` for review. `mem-mesh` is
+configured per agent and works with any supported environment. Without it, `term-mesh`
+still runs but starts each session without saved context.
 
-## Why it is built this way
+## Design rules
 
-From `term-mesh`, on why an unknown model returns no context limit instead of a default:
+`term-mesh` leaves the context limit unknown when it does not recognize a model:
 
 > A percentage computed against a guessed denominator looks exactly like a measured one.
 
-That is the rule the rest of this follows. Diagnostics stop at the diagnosis. Changes
-stay recoverable. Nothing reports a number it did not measure.
+A guessed limit would make an estimate look measured. The same rule applies elsewhere:
+diagnostics do not make changes by default, write operations are explicit, and reported
+figures come from collected data.
 
 <details>
 <summary>Also here</summary>
 
 <br>
 
-- **[space-mesh](https://github.com/x-mesh/space-mesh)** — macOS disk space analyzer. SwiftUI interface, Rust scanning core.
-- **[headroom](https://github.com/x-mesh/headroom)** — Browser tool for topology authoring and infrastructure constraint analysis. Shows which capacity axis saturates first, in the browser, calculations kept local.
-- **[clear-korean](https://github.com/x-mesh/clear-korean)** — Instruction set that makes AI answer in short, precise Korean.
-- **[homebrew-tap](https://github.com/x-mesh/homebrew-tap)** — `brew tap x-mesh/tap`
+- **[space-mesh](https://github.com/x-mesh/space-mesh)**: macOS disk space analyzer. SwiftUI interface, Rust scanning core.
+- **[headroom](https://github.com/x-mesh/headroom)**: Browser tool for topology authoring and infrastructure constraint analysis. Shows which capacity axis saturates first, in the browser, calculations kept local.
+- **[clear-korean](https://github.com/x-mesh/clear-korean)**: Instruction set that makes AI answer in short, precise Korean.
+- **[homebrew-tap](https://github.com/x-mesh/homebrew-tap)**: `brew tap x-mesh/tap`
 
 </details>
 
----
-
-<p align="center">
-  <sub>Read-only by default. Recoverable when it is not.</sub>
-</p>
