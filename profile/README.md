@@ -46,7 +46,7 @@
 | Layer | | Purpose |
 |---|---|---|
 | **Environment** | [term-mesh](https://github.com/x-mesh/term-mesh) | Runs multiple agents in isolated worktrees, locally or over SSH. |
-| **Harness** | [xm](https://github.com/x-mesh/xm) | Plans small repository changes from code evidence and reviews the result with multiple models before merge. |
+| **Harness** | [xm](https://github.com/x-mesh/xm) · [frame-mesh](https://github.com/x-mesh/frame-mesh) | `xm` plans small repository changes from code evidence and reviews the result with multiple models before merge. `frame-mesh` edits a live web page and packs the changes into an agent handoff. |
 | **Context** | [mem-mesh](https://github.com/x-mesh/mem-mesh) · [output-mesh](https://github.com/x-mesh/output-mesh) | `mem-mesh` stores decisions and resumable work state. `output-mesh` records agent artifacts and the sessions that produced them. Both are optional, read-only integrations configured per agent. |
 | **Version control** | [gk](https://github.com/x-mesh/gk) | Adds reflog-based undo, snapshot restore, and repository policies. |
 | **Operations** | [aic](https://github.com/x-mesh/aic) · [edc](https://github.com/x-mesh/edc) · [httprove](https://github.com/x-mesh/httprove) · [dbops](https://github.com/x-mesh/dbops) · [x-backup](https://github.com/x-mesh/x-backup) | Diagnoses shell, system, network, HTTP, database, and backup problems. Diagnostic actions are read-only by default. Commands that write require an explicit flag and offer a dry run. |
@@ -74,6 +74,7 @@ figures come from collected data.
 
 <br>
 
+- **[reel-mesh](https://github.com/x-mesh/reel-mesh)**: Scenario-driven demo GIF recorder. Writes a YAML scenario, records browser steps, and renders a GIF for the project README.
 - **[space-mesh](https://github.com/x-mesh/space-mesh)**: macOS disk space analyzer. SwiftUI interface, Rust scanning core.
 - **[headroom](https://github.com/x-mesh/headroom)**: Browser tool for topology authoring and infrastructure constraint analysis. Shows which capacity axis saturates first, in the browser, calculations kept local.
 - **[clear-korean](https://github.com/x-mesh/clear-korean)**: Instruction set that makes AI answer in short, precise Korean.

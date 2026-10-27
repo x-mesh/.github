@@ -28,12 +28,13 @@
       "color": "purple",
       "hex": "#8250df",
       "repos": [
-        "xm"
+        "xm",
+        "frame-mesh"
       ],
-      "owns": "plan and review repository changes",
+      "owns": "plan, edit, and review repository changes",
       "wired": "gk → xm          finish --gate",
-      "lead": "Plans and reviews changes.",
-      "body": "Builds repository-grounded plans, keeps changes small, and uses multiple models to review the result."
+      "lead": "Plans, edits, and reviews changes.",
+      "body": "xm builds repository-grounded plans and uses multiple models to review the result. frame-mesh edits a live web page and packs the changes into an agent handoff."
     },
     {
       "id": "context",
@@ -180,6 +181,15 @@
         "at": [
           1.26,
           1.55
+        ],
+        "compact": true
+      },
+      {
+        "id": "frame-mesh",
+        "layer": "harness",
+        "at": [
+          1,
+          0.55
         ],
         "compact": true
       }
