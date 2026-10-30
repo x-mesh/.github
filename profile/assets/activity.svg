@@ -1,37 +1,37 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="404" viewBox="0 0 820 404" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
 <rect width="820" height="404" rx="8" fill="#ffffff"/>
 <text x="24" y="34" font-size="15" font-weight="600" fill="#1f2328">x-mesh &#183; activity per month</text>
-<text x="24" y="54" font-size="11" fill="#59636e">all 31 repositories, 10 of them private &#183; measured 2026-10-29 UTC &#183; current month to date</text>
+<text x="24" y="54" font-size="11" fill="#59636e">all 32 repositories, 10 of them private &#183; measured 2026-10-30 UTC &#183; current month to date</text>
 <text x="24" y="78" font-size="12" font-weight="600" fill="#0969da">commits on default branches</text>
 <line x1="24" y1="212" x2="796" y2="212" stroke="#d1d9e0"/>
-<path d="M62.6,202.3 L139.8,184.2 L217.0,175.5 L294.2,165.9 L371.4,177.7 L448.6,172.8 L525.8,135.5 L603.0,147.2 L680.2,145.2 L757.4,114.0 L757.4,212 L62.6,212 Z" fill="#0969da" fill-opacity="0.12"/>
-<polyline points="62.6,202.3 139.8,184.2 217.0,175.5 294.2,165.9 371.4,177.7 448.6,172.8 525.8,135.5 603.0,147.2 680.2,145.2" fill="none" stroke="#0969da" stroke-width="2" stroke-linejoin="round"/>
-<polyline points="680.2,145.2 757.4,114.0" fill="none" stroke="#0969da" stroke-width="2" stroke-dasharray="4 3"/>
-<circle cx="62.6" cy="202.3" r="3" fill="#0969da" stroke="#0969da" stroke-width="1.5"/>
-<text x="62.6" y="194.3" font-size="10" text-anchor="middle" fill="#59636e">223</text>
-<circle cx="139.8" cy="184.2" r="3" fill="#0969da" stroke="#0969da" stroke-width="1.5"/>
-<text x="139.8" y="176.2" font-size="10" text-anchor="middle" fill="#59636e">637</text>
-<circle cx="217.0" cy="175.5" r="3" fill="#0969da" stroke="#0969da" stroke-width="1.5"/>
-<text x="217.0" y="167.5" font-size="10" text-anchor="middle" fill="#59636e">836</text>
-<circle cx="294.2" cy="165.9" r="3" fill="#0969da" stroke="#0969da" stroke-width="1.5"/>
-<text x="294.2" y="157.9" font-size="10" text-anchor="middle" fill="#59636e">1,057</text>
-<circle cx="371.4" cy="177.7" r="3" fill="#0969da" stroke="#0969da" stroke-width="1.5"/>
-<text x="371.4" y="169.7" font-size="10" text-anchor="middle" fill="#59636e">787</text>
-<circle cx="448.6" cy="172.8" r="3" fill="#0969da" stroke="#0969da" stroke-width="1.5"/>
-<text x="448.6" y="164.8" font-size="10" text-anchor="middle" fill="#59636e">898</text>
-<circle cx="525.8" cy="135.5" r="3" fill="#0969da" stroke="#0969da" stroke-width="1.5"/>
-<text x="525.8" y="127.5" font-size="10" text-anchor="middle" fill="#59636e">1,754</text>
-<circle cx="603.0" cy="147.2" r="3" fill="#0969da" stroke="#0969da" stroke-width="1.5"/>
-<text x="603.0" y="139.2" font-size="10" text-anchor="middle" fill="#59636e">1,486</text>
-<circle cx="680.2" cy="145.2" r="3" fill="#0969da" stroke="#0969da" stroke-width="1.5"/>
-<text x="680.2" y="137.2" font-size="10" text-anchor="middle" fill="#59636e">1,532</text>
+<path d="M62.6,202.4 L139.8,184.5 L217.0,175.9 L294.2,166.4 L371.4,178.1 L448.6,173.3 L525.8,136.3 L603.0,147.9 L680.2,145.9 L757.4,114.0 L757.4,212 L62.6,212 Z" fill="#0969da" fill-opacity="0.12"/>
+<polyline points="62.6,202.4 139.8,184.5 217.0,175.9 294.2,166.4 371.4,178.1 448.6,173.3 525.8,136.3 603.0,147.9 680.2,145.9" fill="none" stroke="#0969da" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="680.2,145.9 757.4,114.0" fill="none" stroke="#0969da" stroke-width="2" stroke-dasharray="4 3"/>
+<circle cx="62.6" cy="202.4" r="3" fill="#0969da" stroke="#0969da" stroke-width="1.5"/>
+<text x="62.6" y="194.4" font-size="10" text-anchor="middle" fill="#59636e">223</text>
+<circle cx="139.8" cy="184.5" r="3" fill="#0969da" stroke="#0969da" stroke-width="1.5"/>
+<text x="139.8" y="176.5" font-size="10" text-anchor="middle" fill="#59636e">637</text>
+<circle cx="217.0" cy="175.9" r="3" fill="#0969da" stroke="#0969da" stroke-width="1.5"/>
+<text x="217.0" y="167.9" font-size="10" text-anchor="middle" fill="#59636e">836</text>
+<circle cx="294.2" cy="166.4" r="3" fill="#0969da" stroke="#0969da" stroke-width="1.5"/>
+<text x="294.2" y="158.4" font-size="10" text-anchor="middle" fill="#59636e">1,057</text>
+<circle cx="371.4" cy="178.1" r="3" fill="#0969da" stroke="#0969da" stroke-width="1.5"/>
+<text x="371.4" y="170.1" font-size="10" text-anchor="middle" fill="#59636e">787</text>
+<circle cx="448.6" cy="173.3" r="3" fill="#0969da" stroke="#0969da" stroke-width="1.5"/>
+<text x="448.6" y="165.3" font-size="10" text-anchor="middle" fill="#59636e">898</text>
+<circle cx="525.8" cy="136.3" r="3" fill="#0969da" stroke="#0969da" stroke-width="1.5"/>
+<text x="525.8" y="128.3" font-size="10" text-anchor="middle" fill="#59636e">1,754</text>
+<circle cx="603.0" cy="147.9" r="3" fill="#0969da" stroke="#0969da" stroke-width="1.5"/>
+<text x="603.0" y="139.9" font-size="10" text-anchor="middle" fill="#59636e">1,486</text>
+<circle cx="680.2" cy="145.9" r="3" fill="#0969da" stroke="#0969da" stroke-width="1.5"/>
+<text x="680.2" y="137.9" font-size="10" text-anchor="middle" fill="#59636e">1,532</text>
 <circle cx="757.4" cy="114.0" r="3" fill="#ffffff" stroke="#0969da" stroke-width="1.5"/>
-<text x="757.4" y="106.0" font-size="10" text-anchor="middle" fill="#59636e">2,246</text>
+<text x="757.4" y="106.0" font-size="10" text-anchor="middle" fill="#59636e">2,272</text>
 <text x="24" y="248" font-size="12" font-weight="600" fill="#8250df">merged pull requests</text>
 <line x1="24" y1="342" x2="796" y2="342" stroke="#d1d9e0"/>
-<path d="M62.6,342.0 L139.8,342.0 L217.0,342.0 L294.2,341.3 L371.4,338.0 L448.6,340.9 L525.8,337.4 L603.0,323.3 L680.2,317.4 L757.4,284.0 L757.4,342 L62.6,342 Z" fill="#8250df" fill-opacity="0.12"/>
-<polyline points="62.6,342.0 139.8,342.0 217.0,342.0 294.2,341.3 371.4,338.0 448.6,340.9 525.8,337.4 603.0,323.3 680.2,317.4" fill="none" stroke="#8250df" stroke-width="2" stroke-linejoin="round"/>
-<polyline points="680.2,317.4 757.4,284.0" fill="none" stroke="#8250df" stroke-width="2" stroke-dasharray="4 3"/>
+<path d="M62.6,342.0 L139.8,342.0 L217.0,342.0 L294.2,341.3 L371.4,338.0 L448.6,340.9 L525.8,337.4 L603.0,323.4 L680.2,317.6 L757.4,284.0 L757.4,342 L62.6,342 Z" fill="#8250df" fill-opacity="0.12"/>
+<polyline points="62.6,342.0 139.8,342.0 217.0,342.0 294.2,341.3 371.4,338.0 448.6,340.9 525.8,337.4 603.0,323.4 680.2,317.6" fill="none" stroke="#8250df" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="680.2,317.6 757.4,284.0" fill="none" stroke="#8250df" stroke-width="2" stroke-dasharray="4 3"/>
 <circle cx="62.6" cy="342.0" r="3" fill="#8250df" stroke="#8250df" stroke-width="1.5"/>
 <text x="62.6" y="334.0" font-size="10" text-anchor="middle" fill="#59636e">0</text>
 <circle cx="139.8" cy="342.0" r="3" fill="#8250df" stroke="#8250df" stroke-width="1.5"/>
@@ -46,12 +46,12 @@
 <text x="448.6" y="332.9" font-size="10" text-anchor="middle" fill="#59636e">17</text>
 <circle cx="525.8" cy="337.4" r="3" fill="#8250df" stroke="#8250df" stroke-width="1.5"/>
 <text x="525.8" y="329.4" font-size="10" text-anchor="middle" fill="#59636e">69</text>
-<circle cx="603.0" cy="323.3" r="3" fill="#8250df" stroke="#8250df" stroke-width="1.5"/>
-<text x="603.0" y="315.3" font-size="10" text-anchor="middle" fill="#59636e">281</text>
-<circle cx="680.2" cy="317.4" r="3" fill="#8250df" stroke="#8250df" stroke-width="1.5"/>
-<text x="680.2" y="309.4" font-size="10" text-anchor="middle" fill="#59636e">369</text>
+<circle cx="603.0" cy="323.4" r="3" fill="#8250df" stroke="#8250df" stroke-width="1.5"/>
+<text x="603.0" y="315.4" font-size="10" text-anchor="middle" fill="#59636e">281</text>
+<circle cx="680.2" cy="317.6" r="3" fill="#8250df" stroke="#8250df" stroke-width="1.5"/>
+<text x="680.2" y="309.6" font-size="10" text-anchor="middle" fill="#59636e">369</text>
 <circle cx="757.4" cy="284.0" r="3" fill="#ffffff" stroke="#8250df" stroke-width="1.5"/>
-<text x="757.4" y="276.0" font-size="10" text-anchor="middle" fill="#59636e">870</text>
+<text x="757.4" y="276.0" font-size="10" text-anchor="middle" fill="#59636e">877</text>
 <text x="62.6" y="366" font-size="11" text-anchor="middle" fill="#59636e">Jan</text>
 <text x="62.6" y="382" font-size="10" text-anchor="middle" fill="#59636e">2026</text>
 <text x="139.8" y="366" font-size="11" text-anchor="middle" fill="#59636e">Feb</text>
