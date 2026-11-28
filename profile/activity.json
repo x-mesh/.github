@@ -1,6 +1,6 @@
 {
   "org": "x-mesh",
-  "measuredAt": "2026-11-27T16:56:33.306Z",
+  "measuredAt": "2026-11-28T15:47:05.239Z",
   "repositories": {
     "total": 44,
     "private": 18
@@ -63,8 +63,8 @@
     },
     {
       "month": "2026-11",
-      "commits": 2755,
-      "mergedPulls": 940
+      "commits": 2760,
+      "mergedPulls": 968
     }
   ]
 }
